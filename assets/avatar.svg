@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="glowGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="hijabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="clothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4338ca" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="48" fill="url(#bgGrad)" />
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="200" cy="180" r="140" fill="url(#glowGlow)" />
+  <circle cx="90" cy="100" r="4" fill="#a855f7" opacity="0.6" />
+  <circle cx="310" cy="120" r="5" fill="#38bdf8" opacity="0.7" />
+  <circle cx="80" cy="280" r="3" fill="#ec4899" opacity="0.5" />
+  <circle cx="320" cy="270" r="4" fill="#60a5fa" opacity="0.6" />
+
+  <!-- Geometric Tech Grid Rings -->
+  <circle cx="200" cy="200" r="156" fill="none" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.5" />
+  <circle cx="200" cy="200" r="172" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+
+  <!-- Circular Avatar Frame -->
+  <g clip-path="url(#avatarClip)">
+    <clipPath id="avatarClip">
+      <circle cx="200" cy="200" r="140" />
+    </clipPath>
+
+    <!-- Inner Backdrop -->
+    <circle cx="200" cy="200" r="140" fill="#13122c" />
+
+    <!-- Data Chart Hologram elements in background -->
+    <path d="M120 220 L160 190 L200 210 L240 160 L280 180" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="2.5" />
+    <path d="M120 220 L160 190 L200 210 L240 160 L280 180 L280 250 L120 250 Z" fill="rgba(56, 189, 248, 0.05)" />
+
+    <!-- Shoulders / Blazer -->
+    <path d="M110 350 C110 290 145 265 200 265 C255 265 290 290 290 350 Z" fill="url(#clothGrad)" />
+    <!-- Blazer Lapel / Collar Accent -->
+    <path d="M170 265 L200 320 L230 265" fill="none" stroke="#a5b4fc" stroke-width="3" />
+    <polygon points="200,290 185,350 215,350" fill="#312e81" opacity="0.6" />
+
+    <!-- Hijab - Base Structure (Clean, Modern Professional) -->
+    <!-- Chest drape -->
+    <path d="M140 240 C140 270 160 300 200 300 C240 300 260 270 260 240 Z" fill="#334155" />
+    <!-- Main Hijab Wrap -->
+    <path d="M135 185 C135 110 160 85 200 85 C240 85 265 110 265 185 C265 240 245 265 200 265 C155 265 135 240 135 185 Z" fill="#1e293b" />
+
+    <!-- Face Oval -->
+    <ellipse cx="200" cy="180" rx="42" ry="52" fill="#ffd1a9" />
+
+    <!-- Eyes -->
+    <ellipse cx="185" cy="175" rx="4.5" ry="5.5" fill="#1e293b" />
+    <ellipse cx="215" cy="175" rx="4.5" ry="5.5" fill="#1e293b" />
+    <circle cx="186.5" cy="173.5" r="1.5" fill="#ffffff" />
+    <circle cx="216.5" cy="173.5" r="1.5" fill="#ffffff" />
+
+    <!-- Eyebrows -->
+    <path d="M176 166 Q186 162 194 167" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+    <path d="M206 167 Q214 162 224 166" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Nose -->
+    <path d="M199 178 L197 187 L202 188" fill="none" stroke="#e0a98b" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Smile -->
+    <path d="M189 198 Q200 207 211 198" fill="none" stroke="#c2410c" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Hijab Inner Cap Accent -->
+    <path d="M164 150 C175 142 225 142 236 150" fill="none" stroke="#64748b" stroke-width="3.5" />
+  </g>
+
+  <!-- Glowing Outer Rim -->
+  <circle cx="200" cy="200" r="140" fill="none" stroke="url(#ringGrad)" stroke-width="3" filter="url(#neonGlow)" />
+
+  <!-- Floating Data Science Badges -->
+  <!-- Top Right Code / AI Icon -->
+  <g transform="translate(290, 75)">
+    <rect width="44" height="44" rx="14" fill="#0f172a" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <text x="22" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="14" fill="#38bdf8" text-anchor="middle">&lt;/&gt;</text>
+  </g>
+
+  <!-- Bottom Left Analytics Chart Icon -->
+  <g transform="translate(65, 275)">
+    <rect width="48" height="48" rx="14" fill="#0f172a" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <!-- Bar chart icon inside -->
+    <rect x="76" y="300" width="5" height="12" rx="1.5" fill="#a855f7" />
+    <rect x="85" y="293" width="5" height="19" rx="1.5" fill="#38bdf8" />
+    <rect x="94" y="286" width="5" height="26" rx="1.5" fill="#ec4899" />
+  </g>
+
+  <!-- Bottom Right Python / Math Icon -->
+  <g transform="translate(295, 280)">
+    <rect width="44" height="44" rx="14" fill="#0f172a" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <text x="22" y="28" font-family="'Outfit', sans-serif" font-weight="bold" font-size="16" fill="#fbbf24" text-anchor="middle">Py</text>
+  </g>
+</svg>

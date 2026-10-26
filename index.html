@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nurul Kamalia Zahra, S.Si.D. | Data Science Graduate & Data Analyst</title>
+  <meta name="description" content="Portofolio Pribadi Nurul Kamalia Zahra, S.Si.D. - Lulusan Sains Data, Data Analyst, dan Pencipta MEDRISK ANALYSIS (Terdaftar HKI Kementerian Hukum RI).">
+  <meta name="keywords" content="Nurul Kamalia Zahra, Data Science, Data Analyst, MEDRISK ANALYSIS, C5.0 Algorithm, HKI, Pos Indonesia, Jawa Pos, UPN Veteran Jawa Timur">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/foto-portofolio.jpeg">
+
+  <!-- Tailwind CSS via CDN with customized config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080718',
+              surface: 'rgba(18, 17, 38, 0.65)',
+              border: 'rgba(255, 255, 255, 0.1)',
+              purple: '#9333ea',
+              cyan: '#06b6d4',
+              pink: '#ec4899',
+              indigo: '#6366f1',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS (Glassmorphism & animations) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#080718] text-slate-100 antialiased selection:bg-purple-600 selection:text-white">
+
+  <!-- Ambient Glowing Orbs Background -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <div class="ambient-glow glow-4"></div>
+
+  <!-- Background Grid Mesh Overlay -->
+  <div class="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none z-0"></div>
+
+  <!-- Top Fixed Glass Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 transition-all duration-300">
+    <div class="max-w-6xl mx-auto">
+      <nav class="glass-panel rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-lg shadow-purple-950/20 backdrop-blur-xl">
+        <!-- Logo / Name -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 p-[1.5px] shadow-md shadow-purple-500/20 group-hover:shadow-purple-500/40 transition-all duration-300">
+            <div class="w-full h-full bg-[#0d0c22] rounded-[10px] flex items-center justify-center font-bold font-heading text-sm text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-300">
+              NK
+            </div>
+          </div>
+          <div>
+            <span class="font-heading font-bold text-lg tracking-tight text-white group-hover:text-purple-300 transition-colors">
+              Kamalia<span class="text-cyan-400">.</span>
+            </span>
+            <span class="hidden sm:inline-block text-[10px] text-slate-400 font-mono tracking-wider ml-2 px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
+              S.Si.D. • DATA ANALYST
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a href="#about" class="nav-link hover:text-purple-400 transition-colors py-1">Tentang</a>
+          <a href="#experience" class="nav-link hover:text-purple-400 transition-colors py-1">Pengalaman</a>
+          <a href="#projects" class="nav-link hover:text-purple-400 transition-colors py-1">Proyek</a>
+          <a href="#skills" class="nav-link hover:text-purple-400 transition-colors py-1">Keahlian</a>
+          <a href="#education" class="nav-link hover:text-purple-400 transition-colors py-1">Pendidikan & Sertifikasi</a>
+          <a href="#contact" class="nav-link hover:text-purple-400 transition-colors py-1">Kontak</a>
+        </div>
+
+        <!-- Right Action Button -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#contact" class="btn-glow-primary px-4 py-2 rounded-xl text-xs font-semibold tracking-wide flex items-center gap-2">
+            <span>Hubungi Saya</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="md:hidden w-10 h-10 rounded-xl glass-badge flex items-center justify-center text-slate-300 hover:text-white">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileMenu" class="hidden md:hidden mt-2 glass-panel rounded-2xl p-5 border border-white/10 backdrop-blur-2xl">
+        <div class="flex flex-col gap-3 font-medium text-sm text-slate-300">
+          <a href="#about" class="mobile-nav-link hover:text-purple-400 px-3 py-2 rounded-lg hover:bg-white/5 transition-all">Tentang Saya</a>
+          <a href="#experience" class="mobile-nav-link hover:text-purple-400 px-3 py-2 rounded-lg hover:bg-white/5 transition-all">Pengalaman Kerja</a>
+          <a href="#projects" class="mobile-nav-link hover:text-purple-400 px-3 py-2 rounded-lg hover:bg-white/5 transition-all">Proyek</a>
+          <a href="#skills" class="mobile-nav-link hover:text-purple-400 px-3 py-2 rounded-lg hover:bg-white/5 transition-all">Keahlian</a>
+          <a href="#education" class="mobile-nav-link hover:text-purple-400 px-3 py-2 rounded-lg hover:bg-white/5 transition-all">Pendidikan & Sertifikasi</a>
+          <a href="#contact" class="mobile-nav-link hover:text-purple-400 px-3 py-2 rounded-lg hover:bg-white/5 transition-all">Kontak</a>
+          <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
+            <a href="#contact" class="btn-glow-primary text-center py-2.5 rounded-xl text-xs font-semibold">Hubungi Saya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10 pt-28 sm:pt-36">
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="hero" class="min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-12">
+      <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & CTAs -->
+        <div class="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-badge text-xs font-medium text-slate-300 border border-white/10">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span>Tersedia untuk Peluang Karir Data & Proyek Riset</span>
+          </div>
+
+          <!-- Main Greeting & Name -->
+          <div>
+            <p class="text-sm sm:text-base font-mono text-purple-400 mb-2 tracking-wide font-medium flex items-center gap-2">
+              <span>Halo, salam kenal! Saya</span>
+              <span class="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-300 text-xs border border-purple-500/20">Class of 2026</span>
+            </p>
+            <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold font-heading tracking-tight text-white leading-tight">
+              Nurul Kamalia Zahra, <span class="text-gradient-purple">S.Si.D.</span>
+            </h1>
+            <!-- Dynamic Typing Subtitle -->
+            <div class="mt-3 flex items-center gap-2 text-xl sm:text-2xl font-semibold text-slate-300 font-heading min-h-[40px]">
+              <span>Peran:</span>
+              <span id="typingRole" class="text-gradient-cyan"></span>
+              <span class="animate-pulse text-cyan-400">|</span>
+            </div>
+          </div>
+
+          <!-- Location Tag -->
+          <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+            <i class="fa-solid fa-location-dot text-rose-400"></i>
+            <span>Bangkalan, Jawa Timur</span>
+          </div>
+
+          <!-- Short Hook Pitch -->
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+            Lulusan S1 Sains Data UPN "Veteran" Jawa Timur dengan pengalaman magang di bidang <strong class="text-white">Business Analysis</strong> & manajemen data program. Berpengalaman merancang sistem cerdas berbasis <span class="text-purple-300 font-medium">Machine Learning (C5.0) & Association Rule Mining (ARM)</span> yang telah terdaftar resmi pada Surat Pencatatan Ciptaan Kementerian Hukum RI.
+          </p>
+
+          <!-- Action Buttons (Contact Me & Download CV & View Project) -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
+            <a href="#contact" class="btn-glow-primary px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2.5 shadow-lg shadow-purple-600/30 w-full sm:w-auto">
+              <i class="fa-solid fa-paper-plane text-xs"></i>
+              <span>Hubungi Saya</span>
+            </a>
+            <a href="#projects" class="btn-glass px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2.5 w-full sm:w-auto hover:border-cyan-400/50 text-cyan-300">
+              <i class="fa-solid fa-diagram-project text-sm"></i>
+              <span>Lihat Proyek</span>
+            </a>
+            <button id="downloadCvBtn" class="btn-glass px-5 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2.5 w-full sm:w-auto hover:border-purple-400/50">
+              <i class="fa-solid fa-file-arrow-down text-purple-400 text-sm"></i>
+              <span>Curriculum Vitae</span>
+            </button>
+          </div>
+
+          <!-- Quick Contact Pill Badges -->
+          <div class="pt-2 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+            <button onclick="copyToClipboard('nurulkamaliazahra@gmail.com', 'Email')" class="glass-badge px-3.5 py-2 rounded-xl flex items-center gap-2 hover:text-white transition-all cursor-pointer">
+              <i class="fa-solid fa-envelope text-cyan-400"></i>
+              <span>nurulkamaliazahra@gmail.com</span>
+              <i class="fa-regular fa-copy text-[10px] text-slate-500 ml-1"></i>
+            </button>
+
+            <a href="https://wa.me/6289699062473" target="_blank" rel="noopener" class="glass-badge px-3.5 py-2 rounded-xl flex items-center gap-2 hover:text-white transition-all">
+              <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+              <span>+62 896-9906-2473</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Glassmorphic Profile Card with Real Photo -->
+        <div class="lg:col-span-5 flex justify-center items-center relative">
+          
+          <!-- Outer Ambient Glow behind card -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/35 via-cyan-500/25 to-pink-500/35 blur-3xl rounded-full transform -rotate-6"></div>
+
+          <!-- Glass Showcase Card -->
+          <div class="relative w-full max-w-sm glass-panel-card spotlight-card rounded-3xl p-5 sm:p-6 border border-white/20 shadow-2xl backdrop-blur-2xl">
+            
+            <!-- Real Photo Frame -->
+            <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden hero-photo-glow border border-white/25 shadow-xl group">
+              <img src="assets/foto-portofolio.jpeg" alt="Nurul Kamalia Zahra, S.Si.D." class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+              
+              <!-- Subtle dark gradient overlay at bottom of photo -->
+              <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#080718] via-[#080718]/60 to-transparent"></div>
+
+              <!-- Top Left UPN Badge -->
+              <div class="absolute top-3 left-3 glass-badge px-2.5 py-1.5 rounded-xl flex items-center gap-1.5 border border-white/20 text-[10px] font-mono font-medium text-slate-200 shadow-xl backdrop-blur-md">
+                <i class="fa-solid fa-graduation-cap text-cyan-400"></i>
+                <span>UPN "Veteran" Jatim</span>
+              </div>
+
+              <!-- Bottom caption overlay on photo -->
+              <div class="absolute bottom-3 inset-x-3 text-left">
+                <span class="inline-block px-2.5 py-0.5 rounded-md bg-purple-900/80 border border-purple-400/40 text-[10px] font-mono text-purple-200 font-semibold mb-1">
+                  Bachelor of Data Science (S.Si.D.)
+                </span>
+                <p class="text-white font-bold text-sm leading-tight drop-shadow-md">
+                  Nurul Kamalia Zahra
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT SECTION ==================== -->
+    <section id="about" class="py-20 px-4 sm:px-8">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-badge text-xs font-semibold text-purple-300 mb-3 border border-purple-500/30">
+            <i class="fa-solid fa-user-astronaut text-xs"></i>
+            <span>Ringkasan Profil</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">
+            Tentang <span class="text-gradient-purple">Nurul Kamalia Zahra</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-2">
+            Latar belakang akademik, rekam jejak analitis, dan pencapaian karya cipta terdaftar.
+          </p>
+        </div>
+
+        <!-- Main Glass Cards Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Left Glass Card: Full Profile Summary Narrative -->
+          <div class="lg:col-span-7 glass-panel-card spotlight-card rounded-3xl p-6 sm:p-9 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl shadow-inner">
+                  <i class="fa-solid fa-address-card"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold font-heading text-white">Profil & Keahlian Inti</h3>
+                  <p class="text-xs text-slate-400">Data Science Graduate • Data Analyst • HKI Rights Holder</p>
+                </div>
+              </div>
+
+              <!-- About Narrative Text -->
+              <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                  <strong class="text-white font-semibold">Nurul Kamalia Zahra, S.Si.D.</strong> adalah lulusan S1 Sains Data yang memiliki rekam jejak praktis dalam <strong class="text-white">Business Analysis</strong> pada perusahaan logistik nasional (PT Pos Indonesia) dan manajemen data penyiaran televisi (PT Jawa Pos Media Televisi).
+                </p>
+                <p class="text-slate-300">
+                  Terampil dalam analisis dan interpretasi data kuantitatif, pembuatan laporan komprehensif, serta pengambilan keputusan strategis berbasis data (<em class="text-purple-300 not-italic font-medium">data-driven decision making</em>) menggunakan ekosistem Python, Microsoft Office, Power BI, Looker Studio, dan algoritma data mining.
+                </p>
+              </div>
+            </div>
+
+            <!-- Key Strengths Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 mt-6 border-t border-white/10">
+              <div class="p-3 rounded-2xl bg-white/[0.03] border border-white/5">
+                <i class="fa-solid fa-chart-pie text-cyan-400 text-sm mb-1.5 block"></i>
+                <h4 class="text-xs font-bold text-slate-200">Data Analysis</h4>
+                <p class="text-[11px] text-slate-400 mt-0.5">Analisis tren & interpretasi</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-white/[0.03] border border-white/5">
+                <i class="fa-solid fa-brain text-purple-400 text-sm mb-1.5 block"></i>
+                <h4 class="text-xs font-bold text-slate-200">Machine Learning</h4>
+                <p class="text-[11px] text-slate-400 mt-0.5">Model C5.0 & Prediksi</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-white/[0.03] border border-white/5 col-span-2 sm:col-span-1">
+                <i class="fa-solid fa-bullseye text-pink-400 text-sm mb-1.5 block"></i>
+                <h4 class="text-xs font-bold text-slate-200">Decision Making</h4>
+                <p class="text-[11px] text-slate-400 mt-0.5">Solusi bisnis terukur</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Glass Column: Education Highlight -->
+          <div class="lg:col-span-5 flex flex-col">
+            <!-- Education Highlight Card -->
+            <div class="glass-panel-card spotlight-card rounded-3xl p-6 sm:p-8 h-full flex flex-col justify-between border border-white/10">
+              <div>
+                <div class="flex items-center gap-3.5 mb-4">
+                  <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase font-mono tracking-wider text-cyan-400 font-semibold">Latar Belakang Pendidikan</span>
+                    <h4 class="text-lg font-bold font-heading text-white">S1 Sains Data (S.Si.D.)</h4>
+                  </div>
+                </div>
+                <p class="text-sm font-semibold text-slate-200">
+                  Universitas Pembangunan Nasional "Veteran" Jawa Timur
+                </p>
+                <div class="flex items-center gap-2 mt-2 text-xs text-slate-400">
+                  <i class="fa-regular fa-calendar text-slate-500"></i>
+                  <span>Periode Studi: 2022 – 2026 (Angkatan 2022)</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+                  Fokus akademik komprehensif mencakup pemodelan statistik inferensial, penambangan data (data mining), algoritma machine learning, serta perancangan dashboard visual interaktif untuk kebutuhan analisis bisnis modern.
+                </p>
+              </div>
+
+              <div class="pt-6 mt-6 border-t border-white/10 flex flex-wrap gap-2 text-[11px] font-mono text-slate-300">
+                <span class="glass-badge px-2.5 py-1 rounded-lg">Data Science</span>
+                <span class="glass-badge px-2.5 py-1 rounded-lg">Machine Learning</span>
+                <span class="glass-badge px-2.5 py-1 rounded-lg">Business Intelligence</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. WORK EXPERIENCE SECTION ==================== -->
+    <section id="experience" class="py-20 px-4 sm:px-8 relative">
+      <div class="max-w-5xl mx-auto">
+        
+        <!-- Section Title -->
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-badge text-xs font-semibold text-cyan-300 mb-3 border border-cyan-500/30">
+            <i class="fa-solid fa-briefcase text-xs"></i>
+            <span>Jejak Karir & Magang</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">
+            Pengalaman <span class="text-gradient-purple">Kerja & Magang</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-2">
+            Riwayat kontribusi profesional dalam Business Analysis dan manajemen data penyiaran media.
+          </p>
+        </div>
+
+        <!-- Interactive Glass Timeline -->
+        <div class="relative">
+          
+          <!-- Central Gradient Stem Line (Desktop) / Left Line (Mobile) -->
+          <div class="timeline-stem"></div>
+
+          <div class="space-y-12">
+            
+            <!-- Timeline Item 1: PT Pos Indonesia (Persero) -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+              
+              <!-- Timeline Dot Indicator -->
+              <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#0a0a1f] border-2 border-purple-500 flex items-center justify-center text-purple-400 shadow-lg shadow-purple-500/30 z-20 group-hover:scale-125 transition-transform duration-300">
+                <i class="fa-solid fa-building-columns text-xs"></i>
+              </div>
+
+              <!-- Left Side content (Desktop: Width 1/2, Left aligned text) -->
+              <div class="w-full md:w-1/2 pl-14 md:pl-0 md:pr-12 md:text-right">
+                <div class="glass-badge inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-medium text-purple-300 mb-2">
+                  <i class="fa-regular fa-calendar-check text-[11px]"></i>
+                  <span>February 2025 – June 2025</span>
+                </div>
+                <h3 class="text-xl font-bold font-heading text-white group-hover:text-purple-300 transition-colors">
+                  Business Analyst Intern
+                </h3>
+                <h4 class="text-sm font-semibold text-cyan-400 flex items-center md:justify-end gap-2 mt-0.5">
+                  <i class="fa-solid fa-envelope-open-text text-xs"></i>
+                  <span>PT Pos Indonesia (Persero)</span>
+                </h4>
+              </div>
+
+              <!-- Right Side Card (Desktop: Width 1/2) -->
+              <div class="w-full md:w-1/2 pl-14 md:pl-12 mt-4 md:mt-0">
+                <div class="glass-panel-card spotlight-card rounded-3xl p-6 border border-white/10 group-hover:border-purple-400/50 transition-all duration-300">
+                  <p class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold mb-3">
+                    Pencapaian & Tanggung Jawab:
+                  </p>
+                  <ul class="space-y-3 text-slate-300 text-xs sm:text-sm">
+                    <li class="flex items-start gap-3">
+                      <span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                      <span>Segmented customers and analyzed activity patterns to identify customer characteristics and support service strategies.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                      <span>Developed revenue forecasts to support business planning and decision-making.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-5 h-5 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                      <span>Created data visualizations and interactive dashboards to present actionable insights.</span>
+                    </li>
+                  </ul>
+
+                  <!-- Skill Tag Pills -->
+                  <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-white/5">
+                    <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-purple-300 font-mono">Customer Segmentation</span>
+                    <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-cyan-300 font-mono">Revenue Forecasting</span>
+                    <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-pink-300 font-mono">Interactive Dashboards</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Timeline Item 2: PT Jawa Pos Media Televisi -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+              
+              <!-- Timeline Dot Indicator -->
+              <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#0a0a1f] border-2 border-cyan-400 flex items-center justify-center text-cyan-400 shadow-lg shadow-cyan-500/30 z-20 group-hover:scale-125 transition-transform duration-300">
+                <i class="fa-solid fa-tv text-xs"></i>
+              </div>
+
+              <!-- Left Side Card on Desktop (Order swap) -->
+              <div class="w-full md:w-1/2 pl-14 md:pl-0 md:pr-12 md:order-1 order-2 mt-4 md:mt-0">
+                <div class="glass-panel-card spotlight-card rounded-3xl p-6 border border-white/10 group-hover:border-cyan-400/50 transition-all duration-300">
+                  <p class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold mb-3">
+                    Pencapaian & Tanggung Jawab:
+                  </p>
+                  <ul class="space-y-3 text-slate-300 text-xs sm:text-sm">
+                    <li class="flex items-start gap-3">
+                      <span class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                      <span>Processed and evaluated television program performance data, including ratings and audience share.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                      <span>Analyzed audience characteristics, viewing patterns, and preferences across program segments.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                      <span>Delivered data-driven insights to support program evaluation and content development.</span>
+                    </li>
+                  </ul>
+
+                  <!-- Skill Tag Pills -->
+                  <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-white/5">
+                    <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-cyan-300 font-mono">Rating & Share Analysis</span>
+                    <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-purple-300 font-mono">Audience Demographics</span>
+                    <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-emerald-300 font-mono">Content Strategy</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Side Title on Desktop (Order 2) -->
+              <div class="w-full md:w-1/2 pl-14 md:pl-12 md:order-2 order-1">
+                <div class="glass-badge inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-medium text-cyan-300 mb-2">
+                  <i class="fa-regular fa-calendar-check text-[11px]"></i>
+                  <span>August 2024 – January 2025</span>
+                </div>
+                <h3 class="text-xl font-bold font-heading text-white group-hover:text-cyan-300 transition-colors">
+                  Library (Program) Intern
+                </h3>
+                <h4 class="text-sm font-semibold text-purple-400 flex items-center gap-2 mt-0.5">
+                  <i class="fa-solid fa-broadcast-tower text-xs"></i>
+                  <span>PT Jawa Pos Media Televisi</span>
+                </h4>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. FEATURED PROJECT & HKI SECTION ==================== -->
+    <section id="projects" class="py-24 px-4 sm:px-8 relative bg-gradient-to-b from-transparent via-purple-950/15 to-transparent">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-badge text-xs font-semibold text-cyan-300 mb-3 border border-cyan-500/30">
+            <i class="fa-solid fa-laptop-code text-xs"></i>
+            <span>Proyek Unggulan</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+            Proyek Unggulan: <span class="text-gradient-cyan">MEDRISK ANALYSIS</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+            Sistem cerdas integrasi <strong>Machine Learning (Algoritma C5.0) & Association Rule Mining (ARM)</strong> untuk menganalisis kombinasi resep obat, memetakan risiko interaksi obat berbahaya, serta mengekstraksi pola aturan asosiasi peresepan multi-obat secara akurat.
+          </p>
+        </div>
+
+        <!-- Main Featured Project Card Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left Column: Interactive Screenshots Viewer (Lg: Col 7) -->
+          <div class="lg:col-span-7 space-y-4">
+            
+            <!-- Main Screenshot Display Frame with Glow -->
+            <div class="glass-panel-card spotlight-card rounded-3xl p-4 sm:p-5 border border-white/20 shadow-2xl relative overflow-hidden group">
+              
+              <!-- Screen Top Bar with mac-style dots -->
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10 px-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                  <span class="text-[11px] font-mono text-slate-400 ml-2">medrisk-analysis.web.app</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono">
+                    <i class="fa-solid fa-circle-dot text-[8px] animate-pulse text-cyan-400 mr-1"></i>Live View
+                  </span>
+                  <button onclick="openLightbox(document.getElementById('medriskMainImg').src, document.getElementById('medriskCaptionTitle').textContent)" class="text-xs text-slate-400 hover:text-white transition-colors p-1" title="Perbesar Tangkapan Layar">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Main Image Preview -->
+              <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-white/10 cursor-pointer shadow-inner">
+                <img id="medriskMainImg" src="assets/medrisk-1.png" alt="MEDRISK ANALYSIS Screenshot" class="w-full h-full object-cover object-top transition-all duration-300 group-hover:scale-[1.02]">
+                <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-3.5 py-1.5 rounded-xl glass-badge text-xs font-semibold text-white flex items-center gap-2 shadow-2xl">
+                    <i class="fa-solid fa-magnifying-glass-plus text-cyan-400"></i>
+                    <span>Klik untuk Memperbesar</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Dynamic Screenshot Caption Box -->
+              <div class="mt-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
+                <h4 id="medriskCaptionTitle" class="text-sm font-bold font-heading text-cyan-300">
+                  1. Beranda Sistem: Prediksi C5.0 & Modul Asosiasi
+                </h4>
+                <p id="medriskCaptionDesc" class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  Antarmuka utama sistem cerdas MEDRISK ANALYSIS yang mengintegrasikan klasifikasi algoritma C5.0 dan Association Rule Mining (ARM) untuk evaluasi risiko peresepan obat.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Thumbnail Tabs (6 Screenshots) -->
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+              <!-- Thumb 1 -->
+              <button class="thumb-tab active rounded-xl overflow-hidden p-1 glass-badge border border-white/10 flex flex-col items-center" data-img="1" data-src="assets/medrisk-1.png">
+                <img src="assets/medrisk-1.png" alt="Screen 1" class="w-full aspect-[16/10] object-cover rounded-lg">
+                <span class="text-[9px] font-mono text-slate-300 mt-1 font-semibold truncate w-full text-center">Beranda</span>
+              </button>
+
+              <!-- Thumb 2 -->
+              <button class="thumb-tab rounded-xl overflow-hidden p-1 glass-badge border border-white/10 flex flex-col items-center" data-img="2" data-src="assets/medrisk-2.png">
+                <img src="assets/medrisk-2.png" alt="Screen 2" class="w-full aspect-[16/10] object-cover rounded-lg">
+                <span class="text-[9px] font-mono text-slate-300 mt-1 font-semibold truncate w-full text-center">Input Resep</span>
+              </button>
+
+              <!-- Thumb 3 -->
+              <button class="thumb-tab rounded-xl overflow-hidden p-1 glass-badge border border-white/10 flex flex-col items-center" data-img="3" data-src="assets/medrisk-3.png">
+                <img src="assets/medrisk-3.png" alt="Screen 3" class="w-full aspect-[16/10] object-cover rounded-lg">
+                <span class="text-[9px] font-mono text-slate-300 mt-1 font-semibold truncate w-full text-center">Amoxicilin</span>
+              </button>
+
+              <!-- Thumb 4 -->
+              <button class="thumb-tab rounded-xl overflow-hidden p-1 glass-badge border border-white/10 flex flex-col items-center" data-img="4" data-src="assets/medrisk-4.png">
+                <img src="assets/medrisk-4.png" alt="Screen 4" class="w-full aspect-[16/10] object-cover rounded-lg">
+                <span class="text-[9px] font-mono text-slate-300 mt-1 font-semibold truncate w-full text-center">Asam Mef.</span>
+              </button>
+
+              <!-- Thumb 5 -->
+              <button class="thumb-tab rounded-xl overflow-hidden p-1 glass-badge border border-white/10 flex flex-col items-center" data-img="5" data-src="assets/medrisk-5.png">
+                <img src="assets/medrisk-5.png" alt="Screen 5" class="w-full aspect-[16/10] object-cover rounded-lg">
+                <span class="text-[9px] font-mono text-slate-300 mt-1 font-semibold truncate w-full text-center">Param ARM</span>
+              </button>
+
+              <!-- Thumb 6 -->
+              <button class="thumb-tab rounded-xl overflow-hidden p-1 glass-badge border border-white/10 flex flex-col items-center" data-img="6" data-src="assets/medrisk-6.png">
+                <img src="assets/medrisk-6.png" alt="Screen 6" class="w-full aspect-[16/10] object-cover rounded-lg">
+                <span class="text-[9px] font-mono text-slate-300 mt-1 font-semibold truncate w-full text-center">Aturan ARM</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Project Highlights & Legal HKI Certificate (Lg: Col 5) -->
+          <div class="lg:col-span-5 space-y-5">
+            
+            <!-- HKI Certificate Recognition Card -->
+            <div class="glass-panel-card spotlight-card rounded-3xl p-6 border border-amber-400/30 relative overflow-hidden">
+              <div class="absolute -right-10 -bottom-10 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl"></div>
+
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2 text-amber-400 text-xs font-bold font-mono uppercase tracking-wider">
+                  <i class="fa-solid fa-stamp text-sm"></i>
+                  <span>Kementerian Hukum RI</span>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[10px] font-mono font-bold">
+                  Terdaftar Resmi
+                </span>
+              </div>
+
+              <h3 class="text-xl font-bold font-heading text-white">Surat Pencatatan Ciptaan</h3>
+              <p class="text-xs text-slate-300 mt-1 font-mono">Jenis Ciptaan: Program Komputer</p>
+
+              <!-- Metadata Table -->
+              <div class="mt-4 space-y-2 text-xs border-t border-white/10 pt-3 text-slate-300">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Nomor Pencatatan:</span>
+                  <span class="font-mono font-bold text-amber-300">001353841</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Nomor Permohonan:</span>
+                  <span class="font-mono text-slate-200">EC002026117439</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Pencipta:</span>
+                  <span class="text-white font-medium text-right">Nurul Kamalia Zahra dkk</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Pemegang Hak Cipta:</span>
+                  <span class="text-slate-200 text-right">LPPM UPN "Veteran" Jawa Timur</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Masa Perlindungan:</span>
+                  <span class="text-emerald-300 font-medium">Berlaku selama 50 Tahun</span>
+                </div>
+              </div>
+
+              <!-- Button to view Certificate Fullscreen -->
+              <div class="mt-5 pt-4 border-t border-white/10 flex items-center gap-3">
+                <button onclick="openLightbox('assets/sertifikat-haki.png', 'Surat Pencatatan Ciptaan - MEDRISK ANALYSIS (Kementerian Hukum RI)')" class="btn-glow-primary w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-file-shield text-xs"></i>
+                  <span>Lihat Dokumen Sertifikat Asli</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Technical Innovation & Scientific Value Card -->
+            <div class="glass-panel-card spotlight-card rounded-3xl p-6 border border-white/10">
+              <h4 class="text-sm font-bold font-heading text-white mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-microchip text-cyan-400"></i>
+                <span>Fitur & Keunggulan Analitik C5.0 & ARM:</span>
+              </h4>
+
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-tree text-emerald-400 text-xs mt-1 shrink-0"></i>
+                  <div>
+                    <strong class="text-white">Klasifikasi Algoritma C5.0:</strong>
+                    <span class="text-slate-400 block text-[11px] mt-0.5">Membangun Decision Tree untuk memprediksi kategori risiko peresepan obat (Sedikit Berisiko, Cukup Berisiko, Sangat Berisiko) berdasarkan golongan obat dan parameter riwayat pasien.</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-link text-cyan-400 text-xs mt-1 shrink-0"></i>
+                  <div>
+                    <strong class="text-white">Association Rule Mining (ARM):</strong>
+                    <span class="text-slate-400 block text-[11px] mt-0.5">Menambang pola keterkaitan kombinasi obat dari transaksi resep (146 aturan ditemukan) berbasis metrik Support, Confidence, dan Lift untuk mendeteksi obat yang sering diresepkan bersamaan dan berpotensi kontraindikasi.</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-pills text-purple-400 text-xs mt-1 shrink-0"></i>
+                  <div>
+                    <strong class="text-white">Validasi Dosis & Obat Alternatif:</strong>
+                    <span class="text-slate-400 block text-[11px] mt-0.5">Memetakan batasan dosis aman (anak vs dewasa), identifikasi risiko efek samping tukak lambung & alergi penisilin, serta rekomendasi substitusi obat pengganti yang lebih aman.</span>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- Technologies used badges -->
+              <div class="flex flex-wrap gap-1.5 mt-5 pt-4 border-t border-white/5">
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-emerald-300 font-mono">C5.0 Algorithm</span>
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-cyan-300 font-mono">Association Rule Mining (ARM)</span>
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-yellow-300 font-mono">Support, Confidence & Lift</span>
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-pink-300 font-mono">Data Mining</span>
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-purple-300 font-mono">Medical Risk AI</span>
+              </div>
+            </div>
+              <div class="flex flex-wrap gap-1.5 mt-5 pt-4 border-t border-white/5">
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-cyan-300 font-mono">Machine Learning</span>
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-emerald-300 font-mono">C5.0 Algorithm</span>
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-purple-300 font-mono">Data Mining</span>
+                <span class="glass-badge text-[10px] px-2.5 py-1 rounded-lg text-yellow-300 font-mono">Medical Risk AI</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. SKILLS SECTION ==================== -->
+    <section id="skills" class="py-20 px-4 sm:px-8">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Title -->
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-badge text-xs font-semibold text-pink-300 mb-3 border border-pink-500/30">
+            <i class="fa-solid fa-brain text-xs"></i>
+            <span>Kompetensi Teknis & Interpersonal</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">
+            Keahlian <span class="text-gradient-purple">& Kapabilitas</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-2">
+            Perpaduan keahlian komputasi kuantitatif (Hard Skills) dan kemampuan kepemimpinan kolaboratif (Soft Skills).
+          </p>
+        </div>
+
+        <!-- Interactive Category Switcher Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+          <button data-filter="all" class="skill-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-badge bg-purple-600/40 border-purple-400 text-white transition-all">
+            Semua Keahlian (18)
+          </button>
+          <button data-filter="hard" class="skill-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-badge text-slate-400 border-transparent hover:text-white transition-all">
+            <i class="fa-solid fa-code text-cyan-400 mr-1.5"></i> Hard Skills (12)
+          </button>
+          <button data-filter="soft" class="skill-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-badge text-slate-400 border-transparent hover:text-white transition-all">
+            <i class="fa-solid fa-lightbulb text-yellow-400 mr-1.5"></i> Soft Skills (6)
+          </button>
+        </div>
+
+        <!-- Skills Grid Container -->
+        <div id="skillsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+          <!-- ===== HARD SKILLS (12) ===== -->
+
+          <!-- 1. Data Analysis -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Data Analysis</span>
+            <span class="text-[10px] text-purple-300 font-mono">Core Hard Skill</span>
+          </div>
+
+          <!-- 2. Data Visualization -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Data Visualization</span>
+            <span class="text-[10px] text-cyan-300 font-mono">Dashboard & Visuals</span>
+          </div>
+
+          <!-- 3. Python -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 text-xl">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Python</span>
+            <span class="text-[10px] text-yellow-300 font-mono">Pandas, NumPy, Scikit</span>
+          </div>
+
+          <!-- 4. R Programming -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold font-mono">
+              R
+            </div>
+            <span class="text-xs font-bold text-slate-100">R Programming</span>
+            <span class="text-[10px] text-blue-300 font-mono">Statistical Modeling</span>
+          </div>
+
+          <!-- 5. Machine Learning -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Machine Learning</span>
+            <span class="text-[10px] text-emerald-300 font-mono">Classification & C5.0</span>
+          </div>
+
+          <!-- 6. Data Mining -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl">
+              <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Data Mining</span>
+            <span class="text-[10px] text-amber-300 font-mono">Pattern Extraction</span>
+          </div>
+
+          <!-- 7. Statistical Analysis -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Statistical Analysis</span>
+            <span class="text-[10px] text-indigo-300 font-mono">Hypothesis & Metrics</span>
+          </div>
+
+          <!-- 8. Predictive Modeling -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-xl">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Predictive Modeling</span>
+            <span class="text-[10px] text-pink-300 font-mono">Risk Forecasting</span>
+          </div>
+
+          <!-- 9. Customer Segmentation -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-xl">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Customer Segmentation</span>
+            <span class="text-[10px] text-teal-300 font-mono">RFM & Clustering</span>
+          </div>
+
+          <!-- 10. Microsoft Office -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 text-xl">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Microsoft Office</span>
+            <span class="text-[10px] text-red-300 font-mono">Excel, Word, PPT</span>
+          </div>
+
+          <!-- 11. Power BI -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-500 text-xl">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Power BI</span>
+            <span class="text-[10px] text-yellow-300 font-mono">Business Intelligence</span>
+          </div>
+
+          <!-- 12. Looker Studio -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="hard">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Looker Studio</span>
+            <span class="text-[10px] text-sky-300 font-mono">Interactive Dashboards</span>
+          </div>
+
+          <!-- ===== SOFT SKILLS (6) ===== -->
+
+          <!-- 1. Analytical Thinking -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="soft">
+            <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 text-xl">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Analytical Thinking</span>
+            <span class="text-[10px] text-violet-300 font-mono">Critical Logic</span>
+          </div>
+
+          <!-- 2. Problem-Solving -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="soft">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+              <i class="fa-solid fa-puzzle-piece"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Problem-Solving</span>
+            <span class="text-[10px] text-emerald-300 font-mono">Strategic Solutions</span>
+          </div>
+
+          <!-- 3. Communication -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="soft">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Communication</span>
+            <span class="text-[10px] text-cyan-300 font-mono">Insight Reporting</span>
+          </div>
+
+          <!-- 4. Teamwork -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="soft">
+            <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-xl">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Teamwork</span>
+            <span class="text-[10px] text-pink-300 font-mono">Cross-functional</span>
+          </div>
+
+          <!-- 5. Adaptability -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="soft">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 text-xl">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Adaptability</span>
+            <span class="text-[10px] text-orange-300 font-mono">Agile Learner</span>
+          </div>
+
+          <!-- 6. Attention to Detail -->
+          <div class="skill-item spotlight-card glass-panel-card p-4 rounded-2xl flex flex-col items-center text-center justify-center gap-2.5 transition-all" data-category="soft">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl">
+              <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-100">Attention to Detail</span>
+            <span class="text-[10px] text-blue-300 font-mono">Data Accuracy</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. CERTIFICATIONS & EDUCATION SECTION ==================== -->
+    <section id="education" class="py-20 px-4 sm:px-8">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Title -->
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-badge text-xs font-semibold text-emerald-300 mb-3 border border-emerald-500/30">
+            <i class="fa-solid fa-certificate text-xs"></i>
+            <span>Kualifikasi Akademik & Hak Cipta Resmi</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">
+            Pendidikan, Sertifikasi & <span class="text-gradient-purple">Hak Cipta (HKI)</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-2">
+            Legitimasi akademik sarjana, sertifikasi kompetensi profesi BNSP, dan pengakuan hak cipta negara.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          
+          <!-- Card 1: HKI Kementerian Hukum RI -->
+          <div class="glass-panel-card spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-amber-400/40 relative overflow-hidden bg-gradient-to-br from-amber-950/20 to-transparent">
+            <div class="absolute -right-8 -top-8 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold text-amber-300 glass-badge border border-amber-400/40 flex items-center gap-1.5">
+                  <i class="fa-solid fa-stamp text-[10px]"></i>
+                  <span>Kemenkumham RI</span>
+                </span>
+                <span class="text-[11px] font-mono text-emerald-400 font-bold">50 Tahun</span>
+              </div>
+
+              <div class="flex items-start gap-3.5 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl shrink-0">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold font-heading text-white">Surat Pencatatan Ciptaan</h3>
+                  <p class="text-xs font-semibold text-amber-300 mt-0.5">MEDRISK ANALYSIS</p>
+                </div>
+              </div>
+
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Pencatatan hak cipta resmi Program Komputer dari Kementerian Hukum Republik Indonesia (No. 001353841) atas nama Nurul Kamalia Zahra dkk.
+              </p>
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-white/10">
+              <button onclick="openLightbox('assets/sertifikat-haki.png', 'Surat Pencatatan Ciptaan - Kementerian Hukum RI (No. 001353841)')" class="w-full btn-glass py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 hover:border-amber-400/50 text-amber-300">
+                <i class="fa-solid fa-eye text-xs"></i>
+                <span>Lihat Sertifikat HKI</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: BNSP Junior Web Programmer -->
+          <div class="glass-panel-card spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-white/10 relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 w-32 h-32 bg-cyan-600/10 rounded-full blur-2xl"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-medium text-emerald-300 glass-badge border border-emerald-500/30 flex items-center gap-1.5">
+                  <i class="fa-solid fa-shield-halved text-[10px]"></i>
+                  <span>Sertifikasi BNSP</span>
+                </span>
+                <span class="text-[11px] font-mono text-cyan-300 font-medium">Verified</span>
+              </div>
+
+              <div class="flex items-start gap-3.5 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl shrink-0">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold font-heading text-white">Junior Web Programmer</h3>
+                  <p class="text-xs font-semibold text-emerald-400 mt-0.5">Badan Nasional Sertifikasi Profesi</p>
+                </div>
+              </div>
+
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Standarisasi kompetensi profesi nasional dalam perancangan algoritma logika pemrograman, struktur basis data, serta antarmuka web interaktif.
+              </p>
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-white/10 flex flex-wrap gap-1.5 text-[10px] text-slate-300 font-mono">
+              <span class="glass-badge px-2 py-0.5 rounded-md">Web Logic</span>
+              <span class="glass-badge px-2 py-0.5 rounded-md">Database</span>
+              <span class="glass-badge px-2 py-0.5 rounded-md">Algorithms</span>
+            </div>
+          </div>
+
+          <!-- Card 3: UPN Veteran Jawa Timur -->
+          <div class="glass-panel-card spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-white/10 relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 w-32 h-32 bg-purple-600/10 rounded-full blur-2xl"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-medium text-purple-300 glass-badge border border-purple-500/30">
+                  PTN Jawa Timur
+                </span>
+                <span class="text-[11px] font-mono text-slate-400">2022 – 2026</span>
+              </div>
+
+              <div class="flex items-start gap-3.5 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl shrink-0">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold font-heading text-white">S1 Sains Data (S.Si.D.)</h3>
+                  <p class="text-xs font-semibold text-cyan-400 mt-0.5">UPN "Veteran" Jawa Timur</p>
+                </div>
+              </div>
+
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Kurikulum komprehensif mengintegrasikan matematika terapan, statistika, pemodelan Machine Learning, data mining, serta perancangan visualisasi bisnis.
+              </p>
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-white/10 flex flex-wrap gap-1.5 text-[10px] text-slate-300 font-mono">
+              <span class="glass-badge px-2 py-0.5 rounded-md">Data Science</span>
+              <span class="glass-badge px-2 py-0.5 rounded-md">Analytics</span>
+              <span class="glass-badge px-2 py-0.5 rounded-md">Class 2026</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 7. CONTACT SECTION ==================== -->
+    <section id="contact" class="py-20 px-4 sm:px-8 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Title -->
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-badge text-xs font-semibold text-cyan-300 mb-3 border border-cyan-500/30">
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+            <span>Mari Terhubung</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">
+            Hubungi <span class="text-gradient-purple">Saya</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-2">
+            Punya tawaran kerja, proyek analitik, atau ingin berdiskusi seputar Data Science & MEDRISK? Kirim pesan langsung melalui saluran di bawah ini.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left Column: Quick Contact Info Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <!-- Email Card -->
+            <div class="glass-panel-card spotlight-card rounded-3xl p-6 border border-white/10 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <span class="text-xs uppercase font-mono tracking-wider text-slate-400">Email Utama</span>
+                <p class="text-sm font-semibold text-white truncate mt-0.5">nurulkamaliazahra@gmail.com</p>
+                <div class="mt-3 flex items-center gap-2">
+                  <a href="mailto:nurulkamaliazahra@gmail.com" class="text-xs text-purple-300 hover:text-white font-medium flex items-center gap-1.5">
+                    <span>Kirim Email</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  </a>
+                  <span class="text-slate-600">•</span>
+                  <button onclick="copyToClipboard('nurulkamaliazahra@gmail.com', 'Email')" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Salin</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone / WhatsApp Card -->
+            <div class="glass-panel-card spotlight-card rounded-3xl p-6 border border-white/10 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl shrink-0">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <span class="text-xs uppercase font-mono tracking-wider text-slate-400">Telepon & WhatsApp</span>
+                <p class="text-sm font-semibold text-white mt-0.5">+62 896-9906-2473</p>
+                <div class="mt-3 flex items-center gap-2">
+                  <a href="https://wa.me/6289699062473" target="_blank" rel="noopener" class="text-xs text-emerald-400 hover:text-white font-medium flex items-center gap-1.5">
+                    <span>Chat WhatsApp</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  </a>
+                  <span class="text-slate-600">•</span>
+                  <button onclick="copyToClipboard('+6289699062473', 'Nomor Telepon')" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Salin</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="glass-panel-card spotlight-card rounded-3xl p-6 border border-white/10 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="flex-1">
+                <span class="text-xs uppercase font-mono tracking-wider text-slate-400">Domisili</span>
+                <p class="text-sm font-semibold text-white mt-0.5">Bangkalan, Jawa Timur, Indonesia</p>
+                <p class="text-xs text-slate-400 mt-1">Terbuka untuk posisi On-site (Surabaya, Jawa Timur, Jakarta), Hybrid, maupun Remote.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Glassmorphic Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="glass-panel-card spotlight-card rounded-3xl p-7 sm:p-9 border border-white/10">
+              <h3 class="text-xl font-bold font-heading text-white mb-2">Kirim Pesan Langsung</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mb-6">
+                Silakan isi formulir di bawah ini, saya akan merespons dalam waktu 1x24 jam.
+              </p>
+
+              <form id="contactForm" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="formName" class="block text-xs font-medium text-slate-300 mb-1.5">Nama Lengkap *</label>
+                    <input type="text" id="formName" required placeholder="Contoh: Budi Santoso" class="glass-input w-full px-4 py-3 rounded-xl text-sm border focus:ring-0">
+                  </div>
+                  <div>
+                    <label for="formEmail" class="block text-xs font-medium text-slate-300 mb-1.5">Alamat Email *</label>
+                    <input type="email" id="formEmail" required placeholder="nama@perusahaan.com" class="glass-input w-full px-4 py-3 rounded-xl text-sm border focus:ring-0">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="formSubject" class="block text-xs font-medium text-slate-300 mb-1.5">Subjek / Perihal</label>
+                  <input type="text" id="formSubject" placeholder="Peluang Kerja / Proyek Analisis Data / Medrisk" class="glass-input w-full px-4 py-3 rounded-xl text-sm border focus:ring-0">
+                </div>
+
+                <div>
+                  <label for="formMessage" class="block text-xs font-medium text-slate-300 mb-1.5">Pesan *</label>
+                  <textarea id="formMessage" rows="4" required placeholder="Tuliskan pesan atau detail pekerjaan di sini..." class="glass-input w-full px-4 py-3 rounded-xl text-sm border focus:ring-0 resize-none"></textarea>
+                </div>
+
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <button type="submit" id="submitBtn" class="btn-glow-primary w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>Kirim Pesan Sekarang</span>
+                  </button>
+                  <span class="text-[11px] text-slate-500 font-mono text-center sm:text-right">
+                    🔒 Data Anda terlindungi & rahasia
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="relative z-10 border-t border-white/10 mt-20 py-10 px-4 sm:px-8 bg-[#060513]/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <h4 class="font-heading font-bold text-lg text-white">
+          Nurul Kamalia <span class="text-cyan-400">Zahra, S.Si.D.</span>
+        </h4>
+        <p class="text-xs text-slate-400 mt-1">
+          Data Science Graduate • Data Analyst • Bangkalan, East Java
+        </p>
+      </div>
+
+      <!-- Quick nav in footer -->
+      <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-400 font-medium">
+        <a href="#about" class="hover:text-purple-400 transition-colors">Tentang</a>
+        <a href="#experience" class="hover:text-purple-400 transition-colors">Pengalaman</a>
+        <a href="#projects" class="hover:text-purple-400 transition-colors">Proyek</a>
+        <a href="#skills" class="hover:text-purple-400 transition-colors">Keahlian</a>
+        <a href="#education" class="hover:text-purple-400 transition-colors">Pendidikan</a>
+        <a href="#contact" class="hover:text-purple-400 transition-colors">Kontak</a>
+      </div>
+
+      <div class="text-xs text-slate-500 font-mono">
+        © 2026 Nurul Kamalia Zahra, S.Si.D. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BACK TO TOP BUTTON ==================== -->
+  <a href="#hero" id="backToTopBtn" aria-label="Kembali ke atas" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-2xl glass-badge flex items-center justify-center text-slate-200 hover:text-white border border-purple-500/30 shadow-xl opacity-0 pointer-events-none translate-y-6 transition-all duration-300 hover:scale-110">
+    <i class="fa-solid fa-chevron-up text-sm text-purple-400"></i>
+  </a>
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 glass-panel px-5 py-3.5 rounded-2xl border border-white/20 shadow-2xl flex items-center gap-3 min-w-[300px] max-w-md pointer-events-none">
+    <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+    <span id="toastMessage" class="text-xs sm:text-sm font-medium text-slate-100">Pemberitahuan berhasil!</span>
+  </div>
+
+  <!-- ==================== CV PREVIEW & DOWNLOAD MODAL ==================== -->
+  <div id="cvModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-md">
+    <div class="relative w-full max-w-2xl glass-panel-card rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl overflow-y-auto max-h-[90vh]">
+      
+      <!-- Close Button -->
+      <button id="closeCvModal" aria-label="Tutup Modal" class="absolute top-5 right-5 w-9 h-9 rounded-xl glass-badge flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3.5 mb-6">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white text-xl shadow-md">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold font-heading text-white">Curriculum Vitae Preview</h3>
+          <p class="text-xs text-slate-400 font-mono">Nurul_Kamalia_Zahra_S.Si.D._CV.pdf</p>
+        </div>
+      </div>
+
+      <!-- CV Summary Box inside Modal -->
+      <div class="space-y-4 text-xs sm:text-sm text-slate-300 bg-black/40 p-5 rounded-2xl border border-white/10 font-mono">
+        <div class="border-b border-white/10 pb-3">
+          <span class="text-white font-bold text-base block font-heading">NURUL KAMALIA ZAHRA, S.Si.D.</span>
+          <span class="text-purple-400 text-xs">Data Science Graduate / Data Analyst</span>
+          <p class="text-slate-400 text-[11px] mt-1">Bangkalan, East Java • nurulkamaliazahra@gmail.com • +62 896-9906-2473</p>
+        </div>
+
+        <div>
+          <span class="text-cyan-400 font-bold block mb-1">PROFIL RINGKAS:</span>
+          <p class="text-slate-300 text-xs leading-relaxed font-sans">
+            Data Science graduate with internship experience in Business Analysis and Library Program data management. Skilled in data analysis and interpretation, report preparation, and data-driven decision-making using Microsoft Office, Python, and data analytics software.
+          </p>
+        </div>
+
+        <div>
+          <span class="text-amber-300 font-bold block mb-1">KARYA CIPTA HKI:</span>
+          <p class="text-white text-xs font-sans"><strong>MEDRISK ANALYSIS</strong> — Surat Pencatatan Ciptaan Program Komputer, Kementerian Hukum RI (No. 001353841)</p>
+        </div>
+
+        <div>
+          <span class="text-cyan-400 font-bold block mb-1">RIWAYAT MAGANG:</span>
+          <p class="text-white text-xs font-sans">• <strong>PT Pos Indonesia (Persero)</strong> — Business Analyst Intern (Feb 2025 – Jun 2025)</p>
+          <p class="text-white text-xs font-sans">• <strong>PT Jawa Pos Media Televisi</strong> — Library Intern (Aug 2024 – Jan 2025)</p>
+        </div>
+
+        <div>
+          <span class="text-cyan-400 font-bold block mb-1">PENDIDIKAN & SERTIFIKASI:</span>
+          <p class="text-white text-xs font-sans">• S1 Sains Data (S.Si.D.) — UPN "Veteran" Jawa Timur (2022 – 2026)</p>
+          <p class="text-white text-xs font-sans">• BNSP — Junior Web Programmer</p>
+        </div>
+      </div>
+
+      <!-- Modal Action Buttons -->
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-end gap-3">
+        <button onclick="window.print()" class="btn-glass px-5 py-2.5 rounded-xl text-xs font-semibold w-full sm:w-auto flex items-center justify-center gap-2">
+          <i class="fa-solid fa-print"></i>
+          <span>Cetak / Cetak ke PDF</span>
+        </button>
+        <button onclick="showToast('Dokumen CV siap diunduh! Silakan gunakan opsi Cetak ke PDF.', 'info')" class="btn-glow-primary px-6 py-2.5 rounded-xl text-xs font-semibold w-full sm:w-auto flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download"></i>
+          <span>Unduh Berkas</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== UNIVERSAL IMAGE LIGHTBOX MODAL ==================== -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 lightbox-backdrop">
+    <div class="relative max-w-4xl w-full flex flex-col items-center justify-center">
+      <!-- Close Button -->
+      <button id="closeLightbox" aria-label="Tutup Pratinjau Gambar" class="absolute -top-12 right-0 sm:right-2 w-10 h-10 rounded-xl glass-badge flex items-center justify-center text-slate-200 hover:text-white transition-colors border border-white/20">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- Lightbox Image Container -->
+      <div class="glass-panel-card rounded-2xl p-2.5 sm:p-3 border border-white/20 shadow-2xl overflow-hidden max-h-[82vh] flex flex-col items-center">
+        <img id="lightboxImg" src="" alt="Fullscreen Preview" class="max-h-[75vh] w-auto object-contain rounded-xl shadow-2xl">
+        <p id="lightboxCaption" class="mt-3 text-xs sm:text-sm font-medium text-slate-300 text-center font-heading px-4 py-1">
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
